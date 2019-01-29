@@ -1,0 +1,46 @@
+<div class="container mt-5">
+  <h1 class="pb-3">Add Book</h1>
+  <div class="row">
+      <div class="col-3">
+        <h2>Title</h2>
+        <input [(ngModel)]="title" type="text" class="w-100 form-control">
+        <h2>Category</h2>
+        <select [(ngModel)]="cat" class="w-100 form-control">
+          <option selected>Drama</option>
+          <option>Comedy</option>
+          <option>Sport</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+          <h2>Description</h2>
+          <textarea [(ngModel)]="desc" class="w-100 form-control" rows="6"></textarea>
+        <br> 
+            <button class="btn" (click)="addBook()">Add</button>
+      </div>
+    </div>
+      
+    <p>{{error}}</p>   
+ 
+  <hr>
+  <h1>Book List {{books.length}}</h1>
+  <div *ngFor="let book of books" class="pb-4">
+    <div class="row">
+        <div class="col-3">
+            <h3>Title:</h3>
+        </div>
+        <div class="col-9">
+            <p>{{book.title}} ({{book.category}})</p>
+        </div>
+        <div class="col-3">
+            <h3>Description:</h3>
+        </div>
+        <div class="col-9">
+            <p>{{book.description}}</p>
+        </div>
+    </div>
+    <hr>
+  </div>  
+</div>
+  
